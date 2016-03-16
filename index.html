@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Php-learning by Erickson0806</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Php-learning</h1>
+        <p>PHP Learning</p>
+
+        <p class="view"><a href="https://github.com/Erickson0806/PHP-Learning">View the Project on GitHub <small>Erickson0806/PHP-Learning</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Erickson0806/PHP-Learning/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Erickson0806/PHP-Learning/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Erickson0806/PHP-Learning">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="php-learning" class="anchor" href="#php-learning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PHP-Learning</h1>
+
+<h3>
+<a id="1变量" class="anchor" href="#1%E5%8F%98%E9%87%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.变量</h3>
+
+<p>PHP是弱类型语言,在php中使用变量之前不需要声明变量,只需要为变量赋值即可</p>
+
+<pre><code>$tstr = 'string';
+</code></pre>
+
+<h3>
+<a id="2类型" class="anchor" href="#2%E7%B1%BB%E5%9E%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.类型</h3>
+
+<p>1.数组
+php中的数组相当于oc中的数组和字典的结合体
+定义数组的格式如下:</p>
+
+<pre><code>$array = ('value1','value2');
+</code></pre>
+
+<pre><code>$arr = ('a',1,'abc');  
+</code></pre>
+
+<p>使用数组函数array(),</p>
+
+<pre><code>$array[key]='value';
+</code></pre>
+
+<p>例如: <code>$arr[0] ='a';</code></p>
+
+<p>key表示数组的键值,下标从0开始,这段代码的表示给数组变量$arr的第一个元素赋值字符串a;</p>
+
+<pre><code>$arr = array(key1=&gt;value1,key2=&gt;value2....)
+</code></pre>
+
+<pre><code>$arr2 = array('name'=&gt;'张三','age'=&gt;'18');
+</code></pre>
+
+<h3>
+<a id="3常量" class="anchor" href="#3%E5%B8%B8%E9%87%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.常量</h3>
+
+<p>定义常量使用define()函数,常量名前面不需要加$符号,按照惯例常量名全部使用大写</p>
+
+<pre><code>define ("NAME","张三")
+</code></pre>
+
+<p>define()函数有3个参数,第一个参数是常量名(NAME),第2个参数是常量的值(张三),第三个参数表示是否区分大小写,默认为true.</p>
+
+<p>判断一个常量是否存在使用defined()函数,成功返回true,失败返回假.</p>
+
+<pre><code>&lt;?php
+define("NAME","张三")
+if(defined("NAME")) {
+    echo NAME;
+} else {
+    echo "没有此常量";
+}
+?&gt;
+</code></pre>
+
+<p>常量的值只能是标量（boolean ，integer，float 和 string）</p>
+
+<h3>
+<a id="4运算符" class="anchor" href="#4%E8%BF%90%E7%AE%97%E7%AC%A6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.运算符</h3>
+
+<h5>
+<a id="1字符串运算符中的和swift中的一样" class="anchor" href="#1%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%AD%E7%9A%84%E5%92%8Cswift%E4%B8%AD%E7%9A%84%E4%B8%80%E6%A0%B7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.字符串运算符中的<code>.</code>和swift中的<code>+</code>一样</h5>
+
+<h5>
+<a id="2在可以产生值的表达式前使用错误控制运算符可以忽略因表达式运算错误而产生的错误信息错误控制运算符是" class="anchor" href="#2%E5%9C%A8%E5%8F%AF%E4%BB%A5%E4%BA%A7%E7%94%9F%E5%80%BC%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%89%8D%E4%BD%BF%E7%94%A8%E9%94%99%E8%AF%AF%E6%8E%A7%E5%88%B6%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5%E5%9B%A0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%90%E7%AE%97%E9%94%99%E8%AF%AF%E8%80%8C%E4%BA%A7%E7%94%9F%E7%9A%84%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF%E9%94%99%E8%AF%AF%E6%8E%A7%E5%88%B6%E8%BF%90%E7%AE%97%E7%AC%A6%E6%98%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.在可以产生值的表达式前使用错误控制运算符，可以忽略因表达式运算错误而产生的错误信息。错误控制运算符是<code>@</code>
+</h5>
+
+<h5>
+<a id="3执行运算符php将把运算符内的字符作为外壳命令来执行其作用与shell_exec函数相同" class="anchor" href="#3%E6%89%A7%E8%A1%8C%E8%BF%90%E7%AE%97%E7%AC%A6php%E5%B0%86%E6%8A%8A%E8%BF%90%E7%AE%97%E7%AC%A6%E5%86%85%E7%9A%84%E5%AD%97%E7%AC%A6%E4%BD%9C%E4%B8%BA%E5%A4%96%E5%A3%B3%E5%91%BD%E4%BB%A4%E6%9D%A5%E6%89%A7%E8%A1%8C%E5%85%B6%E4%BD%9C%E7%94%A8%E4%B8%8Eshell_exec%E5%87%BD%E6%95%B0%E7%9B%B8%E5%90%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.执行运算符，PHP将把运算符内的字符作为外壳命令来执行，其作用与shell_exec()函数相同</h5>
+
+<pre><code>&lt;?php
+    $output = `ifconfig`;
+    echo "&lt;pre&gt;$output&lt;/pre&gt;";
+?&gt;
+</code></pre>
+
+<h3>
+<a id="5break语句" class="anchor" href="#5break%E8%AF%AD%E5%8F%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.break语句</h3>
+
+<p>break后面可以跟一个数字参数(如:break 1;  break 2; ) 来决定跳出几重循环。break不写参数系统默认是break 1</p>
+
+<h3>
+<a id="6函数" class="anchor" href="#6%E5%87%BD%E6%95%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.函数</h3>
+
+<p>1.函数内部调用全局变量只需要在变量前面加上global关键字.</p>
+
+<pre><code>&lt;?php
+    $a = 1;
+    $b = 2;
+    function Sum()
+    {
+       global $a, $b;
+       $b = $a + $b;
+    }
+    Sum();
+    echo $b;
+?&gt;
+运行结果:3 
+</code></pre>
+
+<h3>
+<a id="7数组" class="anchor" href="#7%E6%95%B0%E7%BB%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.数组</h3>
+
+<pre><code>&lt;?php
+        $arr =array ('name'=&gt;'jim', 'age'=&gt;18, 'sex'=&gt;'男');
+        echo $arr['name'];
+?&gt;
+</code></pre>
+
+<h3>
+<a id="8foreach循环" class="anchor" href="#8foreach%E5%BE%AA%E7%8E%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.foreach循环</h3>
+
+<p>语法格式：</p>
+
+<pre><code>foreach (array as $value){
+       循环体语句;
+}
+</code></pre>
+
+<p>第一个参数array是待遍历的数组, as是关键字, $value表示每次循环把当前元素的值赋给$value. 这个$value可以是自定义的任意变量,比如你把它定义为$a或他的变量都没有问题,不过我们通常使用默认$value,与swift语言中的forin类似</p>
+
+<pre><code>&lt;?php
+        $arr3 = array('name'=&gt;'jim','age'=&gt;23,'sex'=&gt;'男');
+        foreach($arr3 as $value) {
+                echo $value;
+        }
+?&gt;
+运算结果: name:jim age:18 sex:男 
+</code></pre>
+
+<h3>
+<a id="9字符串常用函数" class="anchor" href="#9%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9.字符串常用函数</h3>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Erickson0806">Erickson0806</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
