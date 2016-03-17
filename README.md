@@ -114,5 +114,11 @@ foreach (array as $value){
 ?>
 运算结果: name:jim age:18 sex:男 
 ```
-###9.字符串常用函数
+
+
+
+
+
+
+
 
